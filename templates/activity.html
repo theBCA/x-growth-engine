@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity - X-Bot Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #f5f5f5; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: #1DA1F2; color: white; padding: 30px; text-align: center; margin-bottom: 30px; border-radius: 10px; }
+        .nav { display: flex; gap: 10px; justify-content: center; margin-bottom: 30px; }
+        .nav a { background: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; color: #1DA1F2; font-weight: bold; }
+        .log-item { background: white; padding: 15px; margin-bottom: 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; justify-content: space-between; }
+        .action-badge { padding: 4px 12px; border-radius: 15px; font-size: 0.85em; font-weight: bold; }
+        .action-like { background: #FFD700; color: #333; }
+        .action-retweet { background: #17BF63; color: white; }
+        .action-follow { background: #1DA1F2; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Activity Log</h1>
+        </div>
+        <div class="nav">
+            <a href="/">Dashboard</a>
+            <a href="/tweets">Tweets</a>
+            <a href="/users">Users</a>
+            <a href="/activity">Activity</a>
+        </div>
+
+        {% for log in logs %}
+        <div class="log-item">
+            <div>
+                <span class="action-badge action-{{ log.action }}">{{ log.action.upper() }}</span>
+                <span style="margin-left: 10px;">{{ log.target_type }} {{ log.target_id }}</span>
+            </div>
+            <div style="color: #999;">{{ log.timestamp }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

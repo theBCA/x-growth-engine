@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# Environment variables (CRITICAL - contains API keys)
+.env
+
+# Logs (may contain sensitive data)
+logs/
+*.log
+
+# Database files (contains user data)
+*.db
+*.sqlite
+*.sqlite3
+
+# MongoDB dumps
+dump/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+# Test files
+.pytest_cache/
+.coverage
+htmlcov/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Sensitive data
+secrets/
+credentials/
+private/
